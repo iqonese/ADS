@@ -3,10 +3,10 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world");
         Scanner scan = new Scanner(System.in);
         int x = scan.nextInt();
-        System.out.println(fibonacci(x));
+//        System.out.println(fibonacci(x));
+        System.out.println(power(2, 0));
     }
 
     // problem 1
@@ -49,7 +49,10 @@ public class Main {
     //You are given numbers “a” and “n”, write the function that
     //returns “an”.
     public static int power(int a, int n) {
-        return 1;
+        if (n == 0) {
+            return 1;
+        }
+        return power(a, n -1) * a;
     }
     //problem 7
     //You are given a number “n” and an array of “n” elements,
