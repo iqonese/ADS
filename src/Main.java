@@ -5,16 +5,23 @@ public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int x = scan.nextInt();
-//        System.out.println(fibonacci(x));
-        System.out.println(power(2, 0));
+          int[] array = new int[x];
+        for (int i = 0; i < x; i ++) {
+            array[i] = scan.nextInt();
+        }
+        int min = problem1(array, x);
+        System.out.println(min);
     }
 
     // problem 1
     // You are given a number “n” and an array of “n” elements,
     //write the function that returns minimum of them.
     public static int problem1(int[] array, int size) {
-
-        return 0;
+        if (size == 0 ) {
+            return array[0];
+        }
+        int current = problem1(array, size - 1);
+        return Math.min(current, array[size-1]);
     }
     // problem 2
     //You are given a number “n” and an array of “n” elements,
