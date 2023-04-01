@@ -4,13 +4,9 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        int x = scan.nextInt();
-          int[] array = new int[x];
-        for (int i = 0; i < x; i ++) {
-            array[i] = scan.nextInt();
-        }
-        double average = problem2(array, x -1 );
-        System.out.println(average);
+        int a  = scan.nextInt();
+        int b = scan.nextInt();
+        System.out.println(problem10(a, b));
     }
 
     // problem 1
@@ -93,7 +89,12 @@ public class Main {
     //You are given “a” and “b”, write the function for finding
     //GCD(a, b) using recursion. (Hint: Euclidean Algorithm)
     public static int problem10(int a, int b) {
-        return 10;
+        int remainder = a % b;
+        if (remainder == 0) {
+            return b;
+        }
+
+        return problem10(b, remainder);
     }
 
 }
