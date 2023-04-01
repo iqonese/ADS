@@ -6,7 +6,7 @@ public class Main {
         System.out.println("Hello world");
         Scanner scan = new Scanner(System.in);
         int x = scan.nextInt();
-        System.out.println(factorial(x));
+        System.out.println(fibonacci(x));
     }
 
     // problem 1
@@ -28,9 +28,9 @@ public class Main {
     public static String problem3(int number) {
         return "Prime";
     }
+
     // problem 4
-    //You are given a number “n”, write the program using recursion for
-    //finding “n!”
+    //You are given a number “n”, write the program using recursion for finding “n!”
     public static int factorial(int number) {
         if (number == 1) {
             return 1;
@@ -38,11 +38,12 @@ public class Main {
         return factorial(number - 1) * number;
     }
     //problem 5
-    //You are given a number “n”, write the function for finding n-th
-    //elements in Fibonacci sequence using recursion. (Fn = Fn-1+ Fn-2).
-    //F0= 0, F1 = 1.
+    //You are given a number “n”, write the function for finding n-th elements in Fibonacci sequence using recursion. (Fn = Fn-1+ Fn-2). F0= 0, F1 = 1.
     public static int fibonacci(int number) {
-        return 1;
+        if (number <= 2)  {
+            return 1;
+        }
+        return fibonacci(number - 1) + fibonacci(number -2);
     }
     //problem 6
     //You are given numbers “a” and “n”, write the function that
