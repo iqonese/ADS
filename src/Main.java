@@ -9,8 +9,8 @@ public class Main {
         for (int i = 0; i < x; i ++) {
             array[i] = scan.nextInt();
         }
-        int min = problem1(array, x);
-        System.out.println(min);
+        double average = problem2(array, x -1 );
+        System.out.println(average);
     }
 
     // problem 1
@@ -26,8 +26,12 @@ public class Main {
     // problem 2
     //You are given a number “n” and an array of “n” elements,
     //write the function that returns average of them.
-    public static double problem2(double[] array, int size) {
-        return 0;
+    public static double problem2(int[] array, int index) {
+        if (index == 0) {
+            return (double)array[0];
+        }
+        double currentSum = problem2(array, index - 1) * index + array[index];
+        return currentSum / (index + 1);
     }
     // problem 3
     //You are given a number “n”, write the function for checking
