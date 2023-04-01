@@ -4,9 +4,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        int a  = scan.nextInt();
-        int b = scan.nextInt();
-        System.out.println(problem10(a, b));
+        System.out.println(binom(7, 3));
     }
 
     // problem 1
@@ -80,7 +78,13 @@ public class Main {
     //finds Cn k (binomial coefficient) using formulaCn k =Cn−1
     //k−1+Cn−1
     //k where Cn 0 =Cn n =1.
+    public static int binom(int n, int k) {
+        if (k == 0 || k == n) {
+            return 1;
+        }
 
+        return binom(n -1 , k - 1) + binom(n-1, k);
+    }
     public static int problem9(int n, int k) {
         return 0;
     }
