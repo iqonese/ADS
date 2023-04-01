@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.println(binom(7, 3));
+        System.out.println(fibonacci(0));
     }
 
     // problem 1
@@ -45,9 +45,13 @@ public class Main {
     //problem 5
     //You are given a number “n”, write the function for finding n-th elements in Fibonacci sequence using recursion. (Fn = Fn-1+ Fn-2). F0= 0, F1 = 1.
     public static int fibonacci(int number) {
-        if (number <= 2)  {
+        if (number == 0) {
+            return 0;
+        }
+        else if (number <= 2)  {
             return 1;
         }
+
         return fibonacci(number - 1) + fibonacci(number -2);
     }
     //problem 6
