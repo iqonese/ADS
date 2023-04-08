@@ -30,6 +30,9 @@ public static double findAverage(int[] array, int index) {
     }
 ```
 ## Task 3: 
+`public static boolean checkPrime(int n, int currDivisor)` - a function to check for the wished attribute. Calls recursively until `currDivisor` exceeds `n` squared.\
+**Base Cases**: `false` for: numbers below `2`, all other numbers that are divisible by `2` except `2` itself. `return (n == 2);` takes care of that. If somewhere `n * n > currDivisor` happens, we can be assured that the number is prime by **Trial Division Test**.\
+**Recursive Call**: `return checkPrime(n, currDivisor + 2);` - increment currDivisor by `2`, because we don't have to deal with even numbers. If 
 ## Task 4: 
 ## Task 5: 
 ## Task 6: 
