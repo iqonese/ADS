@@ -1,4 +1,3 @@
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -15,6 +14,7 @@ public class Main {
         int current = findMin(array, size - 1);
         return Math.min(current, array[size-1]);
     }
+
     // problem 2
     // return type is double, because average might be not int.
     public static double findAverage(int[] array, int index) {
@@ -26,11 +26,35 @@ public class Main {
         // index is the index of last element, not size
         return currentSum / (index + 1);
     }
+
     // problem 3
-    //You are given a number “n”, write the function for checking
-    //whether“n” is prime.
-    public static String problem3(int number) {
-        return "Prime";
+    public static boolean checkPrime(int n) {
+        // Trial Division Test
+        return checkPrime(n, 3);
+    }
+
+    public static boolean checkPrime(int n, int currDivisor) {
+
+        // base case for 0 and 1
+        if (n < 2) {
+            return false;
+        }
+        // base case to check whether the number is even
+        if (n % 2 == 0) {
+            // if it is 2 -> true, else -> false
+            return (n == 2);
+        }
+
+        // base case to terminate the program
+        if (currDivisor * currDivisor > n) {
+            return true;
+        }
+        // base case to check for division
+        if (n % currDivisor == 0) {
+            return false;
+        }
+        // Check for next odd number
+        return checkPrime(n, currDivisor + 2);
     }
 
     // problem 4
@@ -41,6 +65,7 @@ public class Main {
         // previous member * current member
         return factorial(number - 1) * number;
     }
+
     //problem 5
     public static int fibonacci(int number) {
         // f(0) = 0
@@ -54,9 +79,8 @@ public class Main {
         // 2 previous members make up the current member
         return fibonacci(number - 1) + fibonacci(number -2);
     }
+
     //problem 6
-    //You are given numbers “a” and “n”, write the function that
-    //returns “an”.
     public static int power(int a, int n) {
         // base case: if the power is 0, we know the result is 1
         if (n == 0) {
@@ -64,25 +88,42 @@ public class Main {
         }
         return power(a, n -1) * a;
     }
+
     //problem 7
-    //You are given a number “n” and an array of “n” elements,
-    //write the program that returns given array in reverse order
-    //without using array data structure.
-//    public static
+    public static void reverseArray(int[] arr, int start, int end) {
+        // two-pointer method, when two pointers meet, we terminate the call
+        if (start >= end) {
+            return;
+        }
+        // method to swap two instances
+        // temporary variable to hold the starting index of the array
+        int temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
+        reverseArray(arr, start + 1, end - 1);
+    }
 
 
     //Problem 8.
-    //You are given a string “s”, write the function for checking
-    //whether “s” is all consists of digits.
-    public static String problem8(String input) {
-        return "Yes";
+    public static boolean isDigits(String s) {
+        // Base case: if the string is empty, it's valid
+        if (s.isEmpty()) {
+            return true;
+        }
+        // Recursive case: check if the first character is a digit
+        else {
+            char firstChar = s.charAt(0);
+            if (Character.isDigit(firstChar)) {
+                // If the first character is a digit, check the rest of the string
+                String restOfTheString = s.substring(1);
+                return isDigits(restOfTheString);
+            }
+        }
+        // If the first character is not a digit, the string is invalid
+        return false;
     }
 
     //Problem 9.
-    //You are given numbers“n” and “k”,write the program that
-    //finds Cn k (binomial coefficient) using formulaCn k =Cn−1
-    //k−1+Cn−1
-    //k where Cn 0 =Cn n =1.
     public static int binom(int n, int k) {
         // base case
         if (k == 0 || k == n) {
