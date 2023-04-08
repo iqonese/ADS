@@ -2,7 +2,7 @@
 You are given a number “n” and an array of “n” elements, write the function that returns minimum of them. \
 `array` - array to work \
 `size ` - size of the array \
-**Solution**: recursively iterate the array with decreasing `size` and compare it with the previous index of `array` till the index is 0 \
+**Solution**: recursively iterate the array with decreasing `size` and compare it with the previous index of `array` till the index is `0` \
 **Base case**: when `size` is `0`, `array[0]` is returned.
 ```
 public static int problem1(int[] array, int size) {
