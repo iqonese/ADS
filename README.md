@@ -1,4 +1,5 @@
-# Task 1: 
+# Laboratory Work 1
+## Task 1: 
 You are given a number “n” and an array of “n” elements, write the function that returns minimum of them. \
 `array` - array to work \
 `size ` - size of the array \
