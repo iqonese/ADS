@@ -6,7 +6,7 @@ You are given a number “n” and an array of “n” elements, write the funct
 **Solution**: recursively iterate the array with decreasing `size` and compare it with the previous index of `array` till the index is `0` \
 **Base case**: when `size` is `0`, `array[0]` is returned.
 ```
-public static int problem1(int[] array, int size) {
+public static int findMin(int[] array, int size) {
         if (size == 0 ) {
             return array[0];
         }
