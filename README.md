@@ -1,5 +1,5 @@
 # Task 1: 
-You are given a number “n” and an array of “n” elements, write the function that returns minimum of them. \n
+You are given a number “n” and an array of “n” elements, write the function that returns minimum of them. /
 `int`
 ```
 public static int problem1(int[] array, int size) {
