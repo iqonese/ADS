@@ -14,6 +14,12 @@ public static int problem1(int[] array, int size) {
         return Math.min(current, array[size-1]);
     }
 ```
-
-
-# 
+## Task 2: 
+## Task 3: 
+## Task 4: 
+## Task 5: 
+## Task 6: 
+## Task 7: 
+## Task 8: 
+## Task 9: 
+## Task 10: 
