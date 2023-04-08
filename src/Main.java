@@ -8,23 +8,22 @@ public class Main {
     }
 
     // problem 1
-    // You are given a number “n” and an array of “n” elements,
-    //write the function that returns minimum of them.
-    public static int problem1(int[] array, int size) {
+    public static int findMin(int[] array, int size) {
         if (size == 0 ) {
             return array[0];
         }
-        int current = problem1(array, size - 1);
+        int current = findMin(array, size - 1);
         return Math.min(current, array[size-1]);
     }
     // problem 2
-    //You are given a number “n” and an array of “n” elements,
-    //write the function that returns average of them.
-    public static double problem2(int[] array, int index) {
+    // return type is double, because average might be not int.
+    public static double findAverage(int[] array, int index) {
         if (index == 0) {
-            return (double)array[0];
+            return (double)array[0];  // base case: the function reaches the start of the array
         }
-        double currentSum = problem2(array, index - 1) * index + array[index];
+        // currentSum holds the value of the current sum of each recursive call
+        double currentSum = findAverage(array, index - 1) * index + array[index];
+        // index is the index of last element, not size
         return currentSum / (index + 1);
     }
     // problem 3
@@ -35,29 +34,31 @@ public class Main {
     }
 
     // problem 4
-    //You are given a number “n”, write the program using recursion for finding “n!”
     public static int factorial(int number) {
         if (number == 1) {
-            return 1;
+            return 1; // base case
         }
+        // previous member * current member
         return factorial(number - 1) * number;
     }
     //problem 5
-    //You are given a number “n”, write the function for finding n-th elements in Fibonacci sequence using recursion. (Fn = Fn-1+ Fn-2). F0= 0, F1 = 1.
     public static int fibonacci(int number) {
+        // f(0) = 0
         if (number == 0) {
             return 0;
         }
+        // f(1) and f(2) = 1
         else if (number <= 2)  {
             return 1;
         }
-
+        // 2 previous members make up the current member
         return fibonacci(number - 1) + fibonacci(number -2);
     }
     //problem 6
     //You are given numbers “a” and “n”, write the function that
     //returns “an”.
     public static int power(int a, int n) {
+        // base case: if the power is 0, we know the result is 1
         if (n == 0) {
             return 1;
         }
@@ -83,10 +84,11 @@ public class Main {
     //k−1+Cn−1
     //k where Cn 0 =Cn n =1.
     public static int binom(int n, int k) {
+        // base case
         if (k == 0 || k == n) {
             return 1;
         }
-
+        // formula for binomial coefficient
         return binom(n -1 , k - 1) + binom(n-1, k);
     }
     public static int problem9(int n, int k) {
@@ -94,14 +96,14 @@ public class Main {
     }
 
     //Problem 10.
-    //You are given “a” and “b”, write the function for finding
-    //GCD(a, b) using recursion. (Hint: Euclidean Algorithm)
+    // I used Euclidean algorithm
     public static int problem10(int a, int b) {
         int remainder = a % b;
+        // We run the code until the remainder is 0, which is a base case
         if (remainder == 0) {
             return b;
         }
-
+        // Formula of Euclidean algorithm
         return problem10(b, remainder);
     }
 
