@@ -1,7 +1,7 @@
 # Task 1: 
 You are given a number “n” and an array of “n” elements, write the function that returns minimum of them. \
 `int[] array` - array to work \
-`size ` - size of the array \ 
+`size ` - size of the array \
 Solution: recursively iterate the array with decreasing `size` and compare it with the previous index of `array` till the index is 0 \
 Base case:  `size` is `0`
 ```
