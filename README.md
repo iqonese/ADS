@@ -64,6 +64,11 @@ char firstChar = s.charAt(0);
 ```
 return false;
 ```
+**Recursive Call:** 
+```
+String restOfTheString = s.substring(1);
+                return isDigits(restOfTheString);
+```
 ## Task 9: Binomial Coefficient
 Formula of Binomial Coefficient
 ```
