@@ -17,7 +17,7 @@ public static int findMin(int[] array, int size) {
 ## Task 2: 
 You are given a number “n” and an array of “n” elements, write the function that returns average of them.\
 `array` - array to work \
-`index` - size of array \
+`index` - index of the last element of array, `size - 1` \
 `currentSum` - current sum of the array at each recursive call \
 **Explanation**: even though `array` is of type `int`, as average can be `double`, our function is of type `double`. We add the current index of the array to the previous response of the recursive call and divide to `(index + 1)`. 
 ```
